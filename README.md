@@ -6,6 +6,18 @@
 **NOTE**:
 *The Project is still in progress and all the code files are not aviablable on github yet.*
 
+---
+
+**Contributers**:
+1. [Anshuman Phadke](https://github.com/anshu1905)
+2. [Saksham](https://github.com/saksham2001)
+3. [Anirudh](https://github.com/Anirudh-Karnik)
+4. Arvind
+
+---
+
+
+
 
 ## Project Abstract
 
