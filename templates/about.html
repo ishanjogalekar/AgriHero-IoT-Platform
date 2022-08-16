@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title>AgriHero - {{ title }}</title>
+        <link rel = "icon" href = "{{ url_for('static', filename='logo.png') }}" type = "image/x-icon">
+    {% else %}
+        <title>AgriHero</title>
+        <link rel = "icon" href = "{{ url_for('static', filename='logo.png') }}" type = "image/x-icon">
+    {% endif %}
+</head>
+<body style="margin-top: 0;">
+  <nav class="navbar navbar-expand-md navbar-light bg-steel fixed-top " style="background-color: #00cc00;">
+    <div class="container">
+      <a class="navbar-brand mr-4" href="/">
+          <img src="{{ url_for('static', filename='logo.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+          AGRIHERO
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/home">Home</a>
+          <a class="nav-item nav-link" href="/news">News</a>
+          <a class="nav-item nav-link" href="/buyandsell">Buy & Sell</a>
+          <a class="nav-item nav-link" href="/about">About</a>
+        </div>
+        <!-- Navbar Right Side -->
+        <div class="navbar-nav">
+          {% if current_user.is_authenticated %}
+            <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
+            <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+          {% else %}
+            <a class="nav-item nav-link" href="/login">Login</a>
+            <a class="nav-item nav-link" href="/register">Register</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="banner" style="background-image:url({{ url_for('static', filename='banner.jpeg') }}); width:100vw; height:100vh; margin-top:0vh; background-repeat: no-repeat; background-size: cover; margin-bottom: 3rem;">
+    <div class="centered"><h1 class="display-3" style="color:white; white-space: nowrap;">Where Accessibility Meets Agriculture</h1></div>
+  </div>
+  <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+            <h4>About the Platform</h4>
+            <p>
+                Our project idea is to create an application which will act as a hub for the agricultural activities of a region.
+            </p>
+            <p>
+                Currently, the agriculture sector is facing severe crisis as result of recent regulatory changes. These changes have abolished the "Open Markets", a very important tool that allowed the farmers to sell their production at fair prices. The situation has become worst due to the poor infrastructure for crop management. To address the same, Delta Ducks have come to rescue with "AgriHero".
+            </p>
+            <p>
+                We aim to give those involved in the agriculture sector, like farmers and vendors, a detailed view of important happenings in the sector, and provide them a platform to conduct al agriculture related commerce, in a fair way.
+            </p>
+            <p>
+                We plan to use a combination of sensors, microcontrollers, and cloud-based platforms to give our customers detailed and accurate information that is directly relevant to them, and to help them conduct business. Furthermore, the data collected over the crop cycle can also be used to ensure the quality of the crops to the buyers. Farmers will be able to directly sell these crops on the platform. Based upon the data, buyers will be able to make intelligible decisions about 'fair' cost of the crops.
+            </p>
+            <p>
+                It is our belief that the current state of access to resources for those in the agriculture sector, leaves a lot to be desired. This is why we aim to create a one stop place for everyone involved in the sector to be connected with each other, which will provide them with all resources they need, including crop management resources, and regulation changes in the sector.
+            </p>
+        </div>
+        <div class="col-md-4">
+          <div class="content-section">
+            <h3>Quick Access</h3>
+            <p class='text-muted'>
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">Login to see alerts</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+        <div class="'content-senction">
+            {% for post in posts %}
+            <article class="media content-section">
+              <div class="media-body">
+                <div class="article-metadata">
+                  <a class="mr-2" href="#">{{ username }}</a>
+                  <small class="text-muted">{{ sensor[1] }}</small>
+                </div>
+                <h2><a class="article-title" href="#">{{ sensor[0] }}</a></h2>
+                <p class="article-content">{{ sensor[0] }}</p>
+              </div>
+            </article>
+            {% endfor %}
+        </div>
+{% endblock content%}

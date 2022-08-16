@@ -1,0 +1,189 @@
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.service-item {
+	border-radius: 5px;
+	padding: 50px 40px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.service-item {
+	margin-bottom: 30px;
+}
+.service-item i {
+	color: #fff;
+	background-color: #00bcd4;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	border-radius: 50%;
+	font-size: 32px;
+}
+.service-item h4 {
+	margin-top: 35px;
+	font-size: 19px;
+	color: #1e1e1e;
+	text-transform: capitalize;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	margin-bottom: 15px;
+}
+
+.service-item p {
+	font-size: 2.5rem;
+	color: #1e1e1e;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	margin-bottom: 10px;
+}
+
+.content-section iframe {
+    width: 80vw;
+    height: 47vh;
+}
+
+@media only screen and (min-width: 768px) {
+.content-section iframe {
+    width: 21.5vw;
+    height: 48vh;
+}
+}
+
+#trainers {
+	padding-bottom: 90px;
+}
+
+#trainers .trainer-item {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+	padding: 15px;
+	margin-bottom: 30px;
+}
+
+#trainers .trainer-item img {
+    width: 100%;
+    border-radius: 5px;
+    height: 17vh;
+}
+
+#trainers .trainer-item span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #14a307;
+    display: inline-block;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#trainers .trainer-item h4 {
+    font-size: 25px;
+    font-weight: 600;
+    color: #232d39;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+}
+
+#trainers .trainer-item p {
+    margin-bottom: 20px;
+}
+
+ul.social-icons li {
+    display: inline-block;
+}
+
+ul.social-icons li:last-child {
+}
+
+ul.social-icons li a {
+    color: #232d39;
+    transition: all .3s;
+}
+
+ul.social-icons li a:hover {
+    color: #ed563b;
+}
+
+.centered {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}

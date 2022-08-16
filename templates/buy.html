@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block content %}
+     <section class="section" id="trainers">
+      <div class="container">
+          <br>
+          <div class="row">
+              {% for listing in buy_listings %}
+                  <div class="col-lg-4">
+                      <div class="trainer-item">
+                          <div class="image-thumb">
+                            <img src="{{ url_for('static', filename='bs_images/' + listing[7]) }}" alt="Product Image">
+                          </div>
+                          <div class="down-content" style="text-align: center;">
+                              {% set unit = listing[6].split() %}
+                              <span style="text-transform: lowercase;">
+                                  <sup>&#8377</sup>{{ listing[4] }}  /{{ unit[-1] }}
+                              </span>
+                              <h4 style="text-transform: uppercase;">{{ listing[3] }}</h4>
+                              <h5><i class="fa fa-map-marker"></i> {{ listing[8] }}</h5>
+                              {% if listing[9] == 'TRUE' %}
+                              <p>AgriHero Verified &#10003;</p>
+                              {% else %}
+                              <p> AgriHero Verified &#10005;</p>
+                              {% endif %}
+                              <button type="button" class="btn btn-outline-success" onclick="window.location.href='{{ url_for('buy_page') }}/{{ listing[0] }}'">Order</button>
+                          </div>
+                      </div>
+                  </div>
+              {% endfor %}
+          </div>
+
+          <br>
+
+          <nav>
+            <ul class="pagination pagination-lg justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="buy.html">1</a></li>
+              <li class="page-item"><a class="page-link" href="buy.html">2</a></li>
+              <li class="page-item"><a class="page-link" href="buy.html">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+      </div>
+  </section>
+  <script>
+      setTimeout(function(){ location.reload(); }, 50000);
+  </script>
+{% endblock content%}
+
+
+
+
+
+
+
+

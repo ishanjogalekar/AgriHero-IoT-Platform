@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block content %}
+     <section class="section" id="trainers">
+          <div class="trainer-item" style="margin: 5px;">
+              <br>
+              <div class="row" style="margin-bottom: 5vh;">
+                <div class="col-lg-4" style="margin-right: 5vw;">
+                  <center>
+                    <div class="product-item">
+                        <img src="{{ url_for('static', filename='bs_images/' + listing[6]) }}" style="margin: 2vw;">
+                    </div>
+                  </center>
+                </div>
+                <div class="col-lg-4">
+                    {% set unit = listing[5].split() %}
+                    <h2 style="text-transform: uppercase;">{{ listing[2] }}</h2>
+                    <p class="mb-2 text-muted text-uppercase small">Crop</p>
+                    <p><span style="text-transform: lowercase;"><strong>&#8377  {{ listing[3] }}  /{{ unit[-1] }}</strong></span></p>
+                    <p class="pt-1">{{ listing[4] }}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="table-responsive" style="padding-bottom: 2vw;">
+                  <table class="table table-sm table-borderless mb-0" style="margin-left: 2vw;">
+                    <tbody>
+                      <tr>
+                        <th class="pl-0 w-25" scope="row"><strong>Quantity</strong></th>
+                        <td>50 Quintals</td>
+                      </tr>
+                      <tr>
+                        <th class="pl-0 w-25" scope="row"><strong>Location</strong></th>
+                        <td>{{ listing[7] }}</td>
+                      </tr>
+                      <tr>
+                        <th class="pl-0 w-25" scope="row"><strong>AgriHero Verified</strong></th>
+                        {% if listing[8] == 'TRUE' %}
+                        <td>&#10003;</td>
+                        {% else %}
+                        <td>&#10005;</td>
+                        {% endif %}
+                      </tr>
+                      <tr>
+                        <th class="pl-0 w-25" scope="row"><strong>Price Negotiable</strong></th>
+                        {% if listing[9] == 'TRUE' %}
+                        <td>&#10003;</td>
+                        {% else %}
+                        <td>&#10005;</td>
+                        {% endif %}
+                      </tr>
+                      <tr>
+                        {% set datetime = listing[1].split()  %}
+                        <th class="pl-0 w-25" scope="row"><strong>Date Listed on</strong></th>
+                        <td>{{ datetime[0] }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+          <a href="{{ url_for('thankyou_page') }}" class="btn btn-success" role="button" aria-pressed="true" style="margin-right: 2vw; margin-left: 2vw;">Buy now</a>
+          <a href="{{ url_for('thankyou_page') }}" class="btn btn-info" role="button" aria-pressed="true">
+            <i class="fa fa-shopping-cart"></i> Add to cart</a>
+        </div>
+      </div>
+  </section>
+  <script>
+      setTimeout(function(){ location.reload(); }, 50000);
+  </script>
+{% endblock content%}
+
+
+
+
+
+
+
+

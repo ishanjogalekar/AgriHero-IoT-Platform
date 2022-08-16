@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbotron text-center">
+    <h1 class="display-3">Thank You For Ordering With Us!</h1>
+    <p class="lead"><strong>Please check your email</strong> for further information.</p>
+    <hr>
+    <p>
+      Having trouble? <a href="{{ url_for('about_page') }}">Contact us</a>
+    </p>
+    <p class="lead">
+      <a href="{{ url_for('home') }}" class="btn btn-primary btn-sm" role="button">Continue To Home</a>
+    </p>
+  </div>
+{% endblock content%}
+
+
+
+
+
+
+
+

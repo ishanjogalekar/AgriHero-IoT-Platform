@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="col-xl">
+      <div class="row flex-nowrap align-items-center">
+        <div class="col">
+          {% set temp = sensors[2] | int %}
+          {% if (temp <= 40 and temp >= 10) %}
+            <div class="service-item" style="background-color: #e6e6e6;">
+              <i class="fa fa-thermometer-full "></i>
+              <h4>Temperature</h4>
+              <p>{{ sensors[2] }} °C</p>
+            </div>
+          {% else %}
+            <div class="service-item" style="background-color: #ffb3b3">
+              <i class="fa fa-thermometer-full "></i>
+              <h4>Temperature</h4>
+              <p>{{ sensors[2] }} °C</p>
+            </div>
+          {% endif %}
+        </div>
+        <div class="col">
+          {% set humidity = sensors[3] | int %}
+          {% if (humidity >= 20) %}
+            <div class="service-item" style="background-color: #e6e6e6;">
+              <i class="fa fa-tint"></i>
+              <h4>Humidity</h4>
+              <p>{{ sensors[3] }} %</p>
+            </div>
+          {% else %}
+            <div class="service-item" style="background-color: #ffb3b3;">
+              <i class="fa fa-tint"></i>
+              <h4>Humidity</h4>
+              <p>{{ sensors[3] }} %</p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="row flex-nowrap align-items-center">
+        <div class="col">
+          {% set soil_humidity = sensors[4] | int %}
+          {% if (soil_humidity >= 20) %}
+            <div class="service-item" style="background-color: #e6e6e6;">
+              <i class="fa fa-leaf"></i>
+              <h4>Average Soil Humidity</h4>
+              <p>{{ sensors[4] }} %</p>
+            </div>
+          {% else %}
+            <div class="service-item" style="background-color: #ffb3b3;">
+              <i class="fa fa-leaf"></i>
+              <h4>Average Soil Humidity</h4>
+              <p>{{ sensors[4] }} %</p>
+            </div>
+          {% endif %}
+        </div>
+        <div class="col">
+          {% set rain = sensors[5] | int %}
+          {% if (rain <= 70) %}
+            <div class="service-item" style="background-color: #e6e6e6;">
+              <i class="fa fa-cloud"></i>
+              <h4>Rain Probability</h4>
+              <p>{{ sensors[5] }} %</p>
+            </div>
+          {% else %}
+            <div class="service-item" style="background-color: #ffb3b3;">
+              <i class="fa fa-cloud"></i>
+              <h4>Rain Probability</h4>
+              <p>{{ sensors[5] }} %</p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="row flex-nowrap align-items-center">
+        <div class="col">
+          {% set wind = sensors[6] | float %}
+          {% if (wind <= 5) %}
+            <div class="service-item" style="background-color: #e6e6e6;">
+              <i class="fa fa-flag-checkered"></i>
+              <h4>Wind Speed</h4>
+              <p>{{ sensors[6] }} m/s</p>
+            </div>
+          {% else %}
+            <div class="service-item" style="background-color: #ffb3b3;">
+              <i class="fa fa-flag-checkered"></i>
+              <h4>Wind Speed</h4>
+              <p>{{ sensors[6] }} m/s</p>
+            </div>
+          {% endif %}
+        </div>
+        <div class="col">
+          <div class="service-item" style="background-color: #e6e6e6;">
+            <i class="fa fa-camera"></i>
+            <h4>Camera Analysis</h4>
+            <p>{{ sensors[7] }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="border-top pt-3" style="text-align: center">
+        <small class="text-muted">
+          Last Updated at {{ sensors[1] }} IST (GMT + 5:30)
+        </small>
+    </div>
+    <script>
+      setTimeout(function(){ location.reload(); }, 50000);
+    </script>
+{% endblock content%}
